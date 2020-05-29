@@ -106,7 +106,18 @@ class _RegistrationState extends State<Registration> {
                   },
                 ),
                 SizedBox(height: 10),
+                /*decoration: new InputDecoration(
+                    hintText: "Registration Date",
+                    labelText: "Registration Date",
+                    border: OutlineInputBorder(
+                        borderRadius: new BorderRadius.circular(10.0))),*/
                 Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      border: Border.all(
+                          width: 1,
+                          color: Colors.black45,
+                          style: BorderStyle.solid)),
                   child: Row(
                     children: <Widget>[
                       new Radio(
@@ -137,26 +148,34 @@ class _RegistrationState extends State<Registration> {
                   ),
                 ),
                 SizedBox(height: 10),
-                Row(
-                  children: <Widget>[
-                    new Text(
-                      "Pilih Agama",
-                      style: TextStyle(fontSize: 18.0, color: Colors.black45),
-                    ),
-                    SizedBox(width: 50),
-                    new DropdownButton(
-                      onChanged: (String value) {
-                        _pilihAgama(value);
-                      },
-                      value: _agama,
-                      items: agama.map((String value) {
-                        return new DropdownMenuItem(
-                          value: value,
-                          child: new Text(value),
-                        );
-                      }).toList(),
-                    ),
-                  ],
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      border: Border.all(
+                          width: 1,
+                          color: Colors.black45,
+                          style: BorderStyle.solid)),
+                  child: Row(
+                    children: <Widget>[
+                      new Text(
+                        "  Pilih Agama",
+                        style: TextStyle(fontSize: 18.0, color: Colors.black45),
+                      ),
+                      SizedBox(width: 50),
+                      new DropdownButton(
+                        onChanged: (String value) {
+                          _pilihAgama(value);
+                        },
+                        value: _agama,
+                        items: agama.map((String value) {
+                          return new DropdownMenuItem(
+                            value: value,
+                            child: new Text(value),
+                          );
+                        }).toList(),
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(height: 10),
                 new TextField(
